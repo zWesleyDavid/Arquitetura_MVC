@@ -21,6 +21,8 @@ O projeto está estruturado da seguinte forma:
 │   ├── abastecimento.controller.ts
 │   ├── abastecimento.module.ts
 │── README.md
+│── Arquitetura-MVC.md
+│── Documentacao.md
 │── package.json
 
 ```
