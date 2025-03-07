@@ -1,6 +1,6 @@
 # Sistema de Auditoria para Postos de Combustíveis
 
-[![Coverage](https://img.shields.io/badge/Coverage-90%25-brightgreen)](https://shields.io/)  
+[![Coverage](https://img.shields.io/badge/Coverage-91%25-brightgreen)](https://shields.io/)  
 [![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)  
 [![Framework: NestJS](https://img.shields.io/badge/Framework-NestJS-red)](https://nestjs.com/)
 
