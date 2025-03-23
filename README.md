@@ -50,11 +50,11 @@ Este documento unifica a documentação e a arquitetura do projeto, contendo tod
 
 ### 2. Cenários de Uso
 
-- **Registro Automático:**  
-  Ao final de cada abastecimento, a bomba envia automaticamente os dados operacionais e financeiros para o sistema, garantindo que todas as informações estejam atualizadas sem intervenção manual.
+- **Importação de XMLs de Abastecimento:**  
+  Após cada abastecimento, o sistema fiscal do posto emite automaticamente uma nota fiscal eletrônica (NFC-e), gerando um arquivo XML com os dados da operação. A aplicação de auditoria realiza a captura desses arquivos e os processa, extraindo informações como volume abastecido, produto, valor total, data, horário e bomba utilizada. Essa abordagem elimina a necessidade de integração direta com as bombas e permite uma implantação mais simples e não invasiva.
 
 - **Análise e Previsão:**  
-  O algoritmo de previsibilidade processa os dados acumulados e fornece recomendações para futuras compras, ajudando os gestores a manter um estoque balanceado e a responder rapidamente às variações de demanda.
+  Paralelamente, o algoritmo de previsibilidade processa os dados acumulados e fornece recomendações para futuras compras de combustíveis, auxiliando os gestores a manterem um estoque balanceado e a responderem de forma ágil às variações de demanda.
 
 - **Tomada de Decisão:**  
   Com informações consolidadas, administradores e analistas podem ajustar estratégias, melhorar a eficiência operacional e garantir a sustentabilidade financeira do posto.
@@ -73,16 +73,31 @@ Este documento unifica a documentação e a arquitetura do projeto, contendo tod
 - **Melhoria no Fluxo de Caixa:**  
   Foco exclusivo na gestão financeira dos abastecimentos, proporcionando uma visão clara dos recursos.
 
+- **Validação Automatizada de Dados:**  
+  A extração e leitura dos arquivos XML das notas fiscais eletrônicas permitem validar de forma automática os dados operacionais e financeiros de cada abastecimento, reduzindo a necessidade de conferência manual e aumentando a confiabilidade das informações.
+
+- **Auditoria Contínua e Não Invasiva:**  
+  O sistema audita os abastecimentos com base em documentos fiscais já emitidos, sem necessidade de integrar-se diretamente às bombas ou ao sistema de ponto de venda (PDV), facilitando a implantação e garantindo independência no processo de auditoria.
+
+- **Identificação de Irregularidades:**  
+  Análises comparativas e relatórios inteligentes permitem detectar desvios de padrões, inconsistências entre volume e valor, ou comportamentos atípicos que possam indicar falhas operacionais ou fraudes.
+
+- **Transparência e Confiabilidade:**  
+  Ao fornecer visibilidade clara sobre cada operação registrada, o sistema fortalece a confiança dos gestores nas informações apresentadas, tornando os dados auditáveis e rastreáveis a qualquer momento.
+
+
 ### 4. Requisitos do Sistema
 
 #### 4.1 Requisitos Funcionais
 
-1. **Registro Automático de Abastecimentos**
+1. **Coleta de Dados via XML de Notas Fiscais**
 
-   - **Descrição:** Após o abastecimento, a bomba envia automaticamente os dados para o sistema.
-   - **Objetivo:** Coletar dados sem intervenção manual.
+   - **Descrição:** O sistema deve importar automaticamente os dados operacionais e financeiros contidos nos XMLs das notas fiscais emitidas após cada abastecimento.
+   - **Objetivo:** Garantir a obtenção confiável dos registros de abastecimento sem necessidade de integração direta com as bombas, simplificando a implantação.
    - **Critérios de Aceitação:**
-     - Processamento e armazenamento imediato dos dados (data, hora, volume, valor e identificação da bomba).
+     - Importação automática ou manual dos arquivos XML provenientes do sistema emissor de notas fiscais.
+     - Extração correta das informações como data, hora, volume abastecido, valor da operação, identificação da bomba e CNPJ do emitente.
+     - Armazenamento estruturado dos dados para posterior auditoria.
 
 2. **Consolidação e Visualização de Dados**
 
@@ -184,6 +199,7 @@ Este documento unifica a documentação e a arquitetura do projeto, contendo tod
   - Plataformas: Jira, Clockify, Discord, Notion, Excalidraw, VsCode, MongoDB Compass.
   - Linguagens: TypeScript e NoSql.
   - Frameworks: Nest.js, Next.js e Node.js.
+  - Hospedagem: RailWay e GitHub.
 
 - **Restrições Não Técnicas:**  
   _(Informações adicionais não especificadas)_
@@ -248,6 +264,7 @@ Este documento unifica a documentação e a arquitetura do projeto, contendo tod
 - **Adoção de Padrões de Projeto:**
 
   - Padrão MVC (Model, View, Controller).
+  - Padrão Monolítico.
 
 - **Definição de Componentes do Sistema:**
 
