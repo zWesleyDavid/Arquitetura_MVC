@@ -1,5 +1,7 @@
 # Sistema de Auditoria para Postos de Combustíveis
 
+Participantes: Anna Júlia Duarte Prando R.A: 22045748-2 | João Pedro dos Santos Lussani R.A: 22014550-2 | Wesley dos Santos David R.A: 22171156-2
+
 [![Coverage](https://img.shields.io/badge/Coverage-91%25-brightgreen)](https://shields.io/)  
 [![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)](https://www.typescriptlang.org/)  
 [![Framework: NestJS](https://img.shields.io/badge/Framework-NestJS-red)](https://nestjs.com/)
