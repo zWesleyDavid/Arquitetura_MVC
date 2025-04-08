@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AbastecimentoModule } from './abastecimento/abastecimento.module';
 import { EmailModule } from './email/email.module';
-import { Logger } from '@nestjs/common';
+import { LogModule } from './log/log.module';
 
 @Module({
   imports: [
@@ -12,7 +12,8 @@ import { Logger } from '@nestjs/common';
       serverSelectionTimeoutMS: 5000,
     }),
     AbastecimentoModule,
-    EmailModule
+    EmailModule,
+    LogModule, // Adicionado o módulo de logs
   ],
   controllers: [],
   providers: [],
