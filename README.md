@@ -423,3 +423,9 @@ export class AbastecimentoModule {}
 - O **usuário faz requisições HTTP** para criar e visualizar abastecimentos.
 - O **controller processa as requisições** e interage com o banco de dados via Mongoose.
 - Os dados são **armazenados no MongoDB** e podem ser consultados posteriormente.
+
+Singleton: será aplicado na instância de conexão com o banco de dados, assegurando que exista apenas uma instância ativa durante toda a execução da aplicação, otimizando recursos e evitando conflitos de acesso concorrente.
+
+Factory Method: utilizado na seleção e gerenciamento dos tipos de combustível. Este padrão possibilita uma criação flexível e extensível de objetos, adaptando-se facilmente à adição de novos combustíveis sem alterar a lógica central da aplicação.
+
+Strategy: será utilizado futuramente para o envio de notificações por diferentes canais (como e-mail e SMS), permitindo a escolha dinâmica da estratégia de envio, facilitando a manutenção e a adição de novos meios de comunicação sem impacto no código principal.
